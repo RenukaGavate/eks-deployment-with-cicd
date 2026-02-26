@@ -1,4 +1,5 @@
-FROM eclipse-temurin:8-jdk
+FROM eclipse-temurin:17-jdk-jammy
+WORKDIR /app
+COPY target/devops-integration.jar app.jar
 EXPOSE 8080
-ADD target/devops-integration.jar devops-integration.jar
-ENTRYPOINT ["java","-jar","/devops-integration.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
